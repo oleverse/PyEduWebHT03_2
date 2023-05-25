@@ -38,7 +38,7 @@ def is_divided(arg_pair):
 def factorize_async(*number):
     result = list()
 
-    pool = Pool(50)
+    pool = Pool()
     for n in number:
         res = pool.map(is_divided, [(n, divider) for divider in range(1, n+1)])
         result.append(list(filter(lambda r: r is not None, res)))
